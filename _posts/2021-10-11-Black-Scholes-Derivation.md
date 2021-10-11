@@ -26,7 +26,7 @@ In Black and Scholes (1973), stock price is modeled using the following stochast
 
 $$ dS_t = r S_t dt + \sigma S_t dB_t $$
 
-Which can be thought of the sum of a deterministic drift term and a stochastic noise term. Note that if we were working in $P$-measure, the $r$ term (risk-free rate) would be replaced with $\mu$ (expected return). $B_t$ is standard Brownian motion or a Wiener process, with $dB_t$ being normally distributed with mean zero and variance dt.
+Which can be thought of the sum of a deterministic drift term and a stochastic noise term. Note that if we were working in $P$-measure, the $r$ term (risk-free rate) would be replaced with $\mu$ (expected return). $B_t$ is standard Brownian motion or a Wiener process, with $dB_t$ being normally distributed with mean zero and variance $dt$.
 
 Let us commence converting from differential form to a slightly more useful integral form. First, we will make use of a key result from Ito's calculus for expressing the infinitessimal of any stochastic process $X_t(S_t, t)$:
 
@@ -108,13 +108,13 @@ We are now ready to perform a substitution. Let $y = -\frac{B_\tau - t\sigma}{\s
 
 When $B_\tau = \infty: y = -\infty$, and when $B_\tau = -d_2\sqrt{\tau}: y = d_2 + \sqrt{\tau}\sigma := d_1$. Substituting and flipping bounds:
 
-$$S_t e^{r\tau} \int_{-\infty}^{d_1} \frac{1}{\sqrt{2\pi}} e^{-\frac{y^2}{2}} dy$$
+$$=S_t e^{r\tau} \int_{-\infty}^{d_1} \frac{1}{\sqrt{2\pi}} e^{-\frac{y^2}{2}} dy$$
 
 Which is the definition of the cumulative normal density function $N(X)$.
 
 $$\therefore \text{I} = S_t e^{r\tau}N(d_1)$$
 
-Changing our attention to take a look at $\text{II}$:
+Shifting our attention to take a look at $\text{II}$:
 
 $$\text{II} = K \int_{-d_2\sqrt{\tau}}^\infty \frac{1}{\sqrt{2\pi\tau}} e^{- \frac{B_\tau^2}{2\tau}} dB_\tau$$
 
@@ -144,7 +144,7 @@ $$ c_t - p_t =  e^{-r\tau}E_t^Q(S_t e^{(r - \frac{1}{2}\sigma^2)\tau + \sigma B_
 
 $$ = S_t - Ke^{-r\tau} $$
 
-Rearranging for p_t:
+Rearranging for $p_t$:
 
 $$p_t = Ke^{-r\tau}(1 - N(d_2)) - S_t(1 - N(d_1))$$
 
