@@ -13,14 +13,14 @@ baseurl: ''
 lang: en
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Pacific/Auckland
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
 title: Dom Sauta # the main title
 
-tagline: A Mathematics & Statistics and Finance student with a curiosity in Quantitative Trading # it will display as the sub-title
+tagline: A Mathematics & Statistics and Finance student with a curiosity in Quantitative Finance # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A simple blog containing projects and book

@@ -1,7 +1,7 @@
 ---
 title: Deriving the Black Scholes Pricing Formula
 author: Domenico Sauta
-date: 2021-09-11 13:36:00 +0800
+date: 2021-10-10 13:36:00 +0800
 categories: [Options Pricing]
 tags: [options, trading]
 math: true

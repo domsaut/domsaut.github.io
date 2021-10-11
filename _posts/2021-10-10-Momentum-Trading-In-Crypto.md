@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-Momentum trading is a technical trading strategy in which one analyses short-term price data, buy assets that have been showing up-trends, and close the position when the trend starts to lose momentum. In this strategy, the exponential moving average of price in a given period is used as a technical indicator to provide trading signals.
+Momentum trading is a technical trading strategy in which one analyses short-term price data, buy assets that have been showing upwards-trends, and close positions when that trend starts to lose momentum. In this strategy, the exponential moving average of price in a given period is used as a technical indicator to develop trading signals.
 
 ---
 
@@ -16,7 +16,7 @@ Momentum trading is a technical trading strategy in which one analyses short-ter
 
 When looking backwards at historical prices, traders have a range of different moving averages to choose from. The most common of which is a simple moving average (SMA). The SMA is, as the name suggests, is an equally weighted average calculation.
 
-The primary drawback of using a simple moving average is that new information is considered to be equally as important as older information generating a trading signal. In reality, this is not the case and it is likely that, by the efficient market hypothesis, the most recent price (excluding any noise) contains the most up-to-date information and should therefore be considered the most important. To capture this idea, we employ an exponential moving average as defined below:
+The primary drawback of using a simple moving average is that new information is considered to be equally as important as older information. In reality, this is not the case and it is likely that, by the efficient market hypothesis, the most recent price (excluding any noise) contains the most up-to-date information and should therefore be considered the most important. To capture this idea, we employ an exponential moving average as defined below:
 
 $$
 \text{EMA}_t(P, \alpha) =
@@ -32,7 +32,7 @@ $$\alpha = \frac{1}{1 + \text{com}}$$
 
 Below, we highlight the differences in the EMAs when changing the COM hyper-parameter from 8 to 24. Notice the differences in reactivity to movements in price.
 
-![ema_demo]({{ site.baseurl }}/assets/2021-10-10/ema_demo.PNG)
+![ema_demo](/assets/2021-10-10/ema_demo.png)
 
 ## Generating a Trading signal
 
@@ -55,7 +55,7 @@ u = (z * np.exp(-z**2  /4)) / (np.sqrt(2) * np.exp(-1/2))
 ```
 Notice that we actually transform the signal twice- the first time with a short term volatility measure of the underlying, and the second time with a longer term volatility measure of the signal itself. Due to this we actually lose a lot of trading signals in the warm-up period while we wait for the data to accumulate. This can be seen in the plot below. After all of our transformations, we can make use of the signal detailed below. It is standardised to be between -1 and 1, where positive values indicate a long position and negative numbers indicate a short position, and the magnitude represents the relative strength of that signal. This algorithm however, only assumes long positions.
 
-![signal](/assets/2021-10-10/signal.PNG)
+![signal](/assets/2021-10-10/signal.png)
 
 Now, it is important to construct a threshold for which we buy and sell. This should be subject to optimisation, but I chose to bin the signal into 3 equally sized responses- "long", "short" and "neutral". The signal outputs a long position when the signal is greater than 0.33, and short position when the signal is less than 0.33. Let us define this threshold as $\eta$. Note that in order to make the algorithm more aggressive, one would simply need to widen the window for buying and selling. We will explore this idea below.
 
@@ -69,17 +69,17 @@ Let us examine the results of the algorithm on Cardano (ADA) using high frequenc
 
 Executing the back-test over a one-year period:
 
-![default_ada](/assets/2021-10-10/default_ada.PNG)
+![default_ada](/assets/2021-10-10/default_ada.png)
 
 Notice the high degree of correlation between price and return- this is slightly worrying for all-weather performance. The high degree of correlation may suggest that this algorithm will out-perform when the underlying is out-performing, but under-perform in a bear market.
 
 Let's now explore a more aggressive algorithm with a $\eta$ of 0.1 for demonstration purposes.
 
-![low_eta](/assets/2021-10-10/low_eta.PNG)
+![low_eta](/assets/2021-10-10/low_eta.png)
 
 Notice that this strategy performs a lot worse- likely a result of more false trading signals. We also trade 326 times- much more than our previous strategy. Maintaining all other variables as constant and increasing our $\eta$ value to 0.5 will yield opposite results:
 
-![high_eta](/assets/2021-10-10/high_eta.PNG)
+![high_eta](/assets/2021-10-10/high_eta.png)
 
 Changing the $\eta$ value to 0.5, we can observe that the algorithm makes 220 trades. In general, it seems that the more conservative $\eta$ value seems to yield better trading decisions, but may not exit positions fast enough to secure profits.
 
