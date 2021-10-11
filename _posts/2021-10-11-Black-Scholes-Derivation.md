@@ -74,7 +74,7 @@ $$E[X] = \int_\mathbb{R} x f(x) dx$$
 
 $$\therefore c_t = e^{-r\tau}\int_{-\infty}^\infty \text{max}(S_T - K, 0)\frac{1}{\sqrt{2\pi\tau}} e^{- \frac{B_\tau^2}{2\tau}} dB_\tau$$
 
-However, before proceeding we will need to deal with that nasty max function. We can do this by computing for which values of $B_\tau$ will the $K-S_T$ drop below 0:
+However, before proceeding we will need to deal with that nasty max function. We can do this by computing for which values of $B_\tau$ will $S_T - K$ drop below 0:
 
 $$S_T - K > 0$$
 
@@ -98,7 +98,7 @@ $$:= \text{I} - \text{II}$$
 
 Dealing with $\text{I}$ first:
 
-$$ I = S_t e^{(r - \frac{\sigma^2}{2})\tau} \int_{-d^2\sqrt{\tau}}^\infty \frac{e^{\sigma B_\tau}e^{\frac{-B_\tau^2}{2\tau}}}{\sqrt{2\pi\tau}} dB_\tau $$
+$$ \text{I} = S_t e^{(r - \frac{\sigma^2}{2})\tau} \int_{-d^2\sqrt{\tau}}^\infty \frac{e^{\sigma B_\tau}e^{\frac{-B_\tau^2}{2\tau}}}{\sqrt{2\pi\tau}} dB_\tau $$
 
 Completing the square so we can perform intergration:
 
@@ -136,7 +136,7 @@ We know that at terminal time $T$, the following relationship must hold by the n
 
 $$ c_T - p_T = S_T - K $$
 
-In order to translate this back to the present time $t$, we must once again take the discounted conditional expectation in $Q$-measure:
+In order to discount this back to the present time $t$, we must once again take the discounted conditional expectation in $Q$-measure:
 
 $$ e^{-r\tau} E_t^Q(c_T - p_T) = e^{-r\tau}E_t^Q(S_T) - Ke^{-r\tau} $$
 
