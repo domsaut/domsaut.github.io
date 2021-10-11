@@ -130,7 +130,7 @@ $$\therefore \fbox{$c_t = S_t N(d_1) - Ke^{-r\tau}N(d_2)$}$$
 
 Where $d_1 = \frac{\ln(\frac{S_t}{K}) + (r + \frac{\sigma^2}{2})\tau}{\sigma \sqrt{\tau}}$ and $d_2 = \frac{\ln(\frac{S_t}{K}) + (r - \frac{\sigma^2}{2})\tau}{\sigma \sqrt{\tau}}$.
 
-## Correponding Put Option Price from Put-Call Parity  
+## Corresponding Put Option Price from Put-Call Parity  
 
 We know that at terminal time $T$, the following relationship must hold by the no-arbitrage principle:
 
