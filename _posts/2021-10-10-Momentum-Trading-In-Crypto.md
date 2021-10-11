@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-Momentum trading is a technical trading strategy in which one analyses short-term price data, buy assets that have been showing upwards-trends, and close positions when that trend starts to lose momentum. In this strategy, the exponential moving average of price in a given period is used as a technical indicator to develop trading signals.
+Momentum trading is a technical trading strategy in which one analyses short-term price data, buy assets that have been showing upwards-trends, and closes positions when that trend starts to lose momentum. In this strategy, the exponential moving average of price is used as a technical indicator to develop trading signals.
 
 ---
 
