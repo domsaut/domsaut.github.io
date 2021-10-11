@@ -32,7 +32,7 @@ $$\alpha = \frac{1}{1 + \text{com}}$$
 
 Below, we highlight the differences in the EMAs when changing the COM hyper-parameter from 8 to 24. Notice the differences in reactivity to movements in price.
 
-![ema_demo](/assets/2021-10-10/ema_demo.PNG)
+![ema_demo]({{ site.baseurl }}/assets/2021-10-10/ema_demo.PNG)
 
 ## Generating a Trading signal
 
