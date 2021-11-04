@@ -1,7 +1,7 @@
 ---
 title: Green's Function and the Heat Equation
 author: Domenico Sauta
-date: 2021-10-10 13:36:00 +0800
+date: 2021-11-04 13:36:00 +0800
 categories: [Mathematical Physics]
 tags: [pde, diracdelta]
 math: true
