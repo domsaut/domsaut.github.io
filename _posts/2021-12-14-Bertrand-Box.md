@@ -53,7 +53,7 @@ $$ = \frac{\frac{1}{3} \times 1}{1 \times \frac{1}{3} + 0 \times \frac{1}{3} + \
 
 $$ = \frac{2}{3} $$
 
-Which is indeed, no $\frac{1}{2}$.
+Which is indeed, not $\frac{1}{2}$.
 
 ## Python Simulation
 
