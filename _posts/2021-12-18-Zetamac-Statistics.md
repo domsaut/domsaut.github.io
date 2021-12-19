@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-In today\'s post, I step through how I developed a statistics dashboard an online maths game [Arithmetic Zetamac][1]. Zetamac is a minimalist online speed maths game which, although serves its purpose very well, does not have a native statistics dashboard or way to store your previous scores. As someone interested in tracking progress over time, I would track my scores on a google doc- a *very* labour intensive task. Today we will see how to automate local data storage using Selenium and produce a dashboard showing statistics using PySimpleGui.
+In today\'s post, I step through how I developed a statistics dashboard for an online maths game [Arithmetic Zetamac][1]. Zetamac is a minimalist online speed maths game which, although serves its purpose very well, does not have a native statistics dashboard or way to store your previous scores. As someone interested in tracking progress over time, I would track my scores on a google doc- a *very* labour intensive task. Today we will see how to automate local data storage using Selenium and produce a dashboard showing statistics using PySimpleGui.
 
 ---
 
